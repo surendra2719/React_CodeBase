@@ -25,21 +25,21 @@ const App = () => {
       >
         <Menu.Item key="/">
           <HomeOutlined />
-          <span>Home</span>
-          <Link to="/"></Link>
+          <span>Menu</span>
+          <Link to="/Menu"></Link>
         </Menu.Item>
 
-        <Menu.Item key="/users">
+         <Menu.Item key="/Profile">
           <TeamOutlined />
           <span>Users</span>
-          <Link to="/users"></Link>
-        </Menu.Item>
+          <Link to="/Profile"></Link>
+        </Menu.Item> 
 
-        <Menu.Item key="/counter">
+        {/* <Menu.Item key="/counter">
           <DashboardOutlined />
           <span>Counter</span>
           <Link to="/counter"></Link>
-        </Menu.Item>
+        </Menu.Item>  */}
       </Menu>
     </Sider>
   );

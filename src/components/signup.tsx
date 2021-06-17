@@ -2,29 +2,29 @@ import { useHistory } from "react-router-dom";
 import { addDataToFB } from '../firebase/firebaseService';
 import { createUserAuth } from '../firebase/firebase_authService';
 import { useSignUpForm } from '../model/signup/signup';
-function SignUp() {
+const SignUp = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
   } = useSignUpForm();
-    const History = useHistory();
-  const onSubmit =( data:any )=> {
+  const History = useHistory();
+  const onSubmit = (data: any) => {
     console.log(JSON.stringify(data, null, 2));
     let { email, password } = data;
     createUserAuth(email, password).then((uesr) => {
       console.log("create auth sucessfull");
-      addDataToFB ("demo-users",data).then((resp) => {
+      addDataToFB("demo-users", data).then((resp) => {
         console.log("user creation sucessfull");
         History.push("/signIn")
         reset()
       }).catch((error) => {
-        console.log("user creation error",error);
+        console.log("user creation error", error);
 
       })
     }).catch((error) => {
-      console.log("user auth error",error);
+      console.log("user auth error", error);
 
     })
   };
@@ -98,7 +98,7 @@ function SignUp() {
           </button>
           <button
             type="button"
-            onClick={()=>reset()}
+            onClick={() => reset()}
             className="btn btn-warning float-right"
           >
             Reset

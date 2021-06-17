@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { singInUserAuth } from '../firebase/firebase_authService';
 import { useLoginForm, } from "../model/login/login";
 
-const  Login:React.FC=()=> {
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -11,15 +11,15 @@ const  Login:React.FC=()=> {
     formState: { errors }
   } = useLoginForm()
   const History = useHistory();
-  const onSubmit = (data :any) => {
-    let {email,password}=data;
-    singInUserAuth(email,password).then((user)=>{
+  const onSubmit = (data: any) => {
+    let { email, password } = data;
+    singInUserAuth(email, password).then((user) => {
       console.log("login auth sucessfull");
       console.log(JSON.stringify(data, null, 2));
       History.push("/dashboard")
-  }).catch((error)=>{
-    console.log("login auth error",error);
-  })
+    }).catch((error) => {
+      console.log("login auth error", error);
+    })
   };
   return (
     <div className="register-form">
@@ -42,15 +42,15 @@ const  Login:React.FC=()=> {
           />
           <div className="invalid-feedback">{errors.password?.message}</div>
         </div>
-        
+
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
             Login
           </button>
           <button
             type="button"
-            
-            onClick={()=>reset()}
+
+            onClick={() => reset()}
             className="btn btn-warning float-right"
           >
             Reset

@@ -5,10 +5,10 @@ export const addDataToFB = (collectionName, data) => {
         .collection(collectionName)
         .add(data);
 }
-export const readDataFromFB=(collectionName)=>{
+export const readDataFromFB = (collectionName) => {
     return firebase
-      .firestore()
-      .collection(collectionName);      
+        .firestore()
+        .collection(collectionName);
 }
 
 

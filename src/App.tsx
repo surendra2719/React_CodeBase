@@ -1,21 +1,24 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/login";
 import SignUp from "./components/signup";
-import Dashboard from "./components/dashboard";
-function App() {
+// import Dashboard from "./components/dashboard";
+import Layout from "./components/Layout/index";
+import Menu from "../src/components/pages/Menu";
+import Profile from "./components/pages/profile";
+const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/signIn">
-          <Login />
-        </Route>
-        <Route path="/signUp">
-          <SignUp />
-        </Route>
-        <Route path="/dashBoard" component={Dashboard} >
-        </Route>
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Route>
+        <Switch>
+          <Route path="/signIn" component={Login} />
+          <Route path="/signUp" component={SignUp} />
+          <Layout>
+            <Route path="/Menu" component={Menu} />
+            <Route path="/Profile" component={Profile} />
+          </Layout>
+        </Switch>
+      </Route>
+    </BrowserRouter>
   )
 };
 export default App;

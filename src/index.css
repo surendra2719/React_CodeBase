@@ -11,3 +11,4 @@ p {
   max-width: 350px;
   margin: auto;
 }
+@import '~antd/dist/antd.css';

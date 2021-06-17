@@ -4,11 +4,13 @@ import SideMenu from './SideMenu';
 import Footer from './Footer';
 const { Content } = Layout;   
 const LayoutWithRoute = (props:any) => {
+  const {children} = props
+  console.log("children-------",children)
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <SideMenu />
       <Layout>
-        <Content style={{ margin: '20px 16px' }}>{props.childern}</Content>
+        <Content style={{ margin: '20px 16px' }}>{children}</Content>
         <Footer/>
       </Layout>
     </Layout>
