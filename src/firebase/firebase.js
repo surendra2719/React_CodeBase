@@ -6,5 +6,5 @@ import { firebaseConfig } from "../config/firebase.config";
 firebase.initializeApp(firebaseConfig)
 //enable if anlytics added in firebase console
 //firebase.analytics()
-
+export const auth = firebase.auth()
 export default firebase

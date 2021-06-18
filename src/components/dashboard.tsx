@@ -3,7 +3,7 @@ function Dashboard() {
   return (
     <>
     <div className="register-form">
-     Dashboard
+     {/* Dashboard */}
     </div>
     </>
   );

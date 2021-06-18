@@ -3,16 +3,14 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { phoneRegExp } from './../../config/regex';
 export interface SignUp {
-    firstname: string;
-    lastname: string;
+    name: string;
     mobilenumber: string;
     email: string
     password: string;
     confirmPassword: string
 }
 export const signUp: { [P in keyof SignUp]: P } = {
-    firstname: "firstname",
-    lastname: "lastname",
+      name: "name",
     mobilenumber: "mobilenumber",
     email: "email",
     password: "password",
@@ -20,8 +18,8 @@ export const signUp: { [P in keyof SignUp]: P } = {
 };
 
 export const signUpSchema = Yup.object().shape({
-    firstname: Yup.string().required('First name is required'),
-    lastname: Yup.string().required('Last name is required'),
+    name: Yup.string().required('First name is required'),
+    // lastname: Yup.string().required('Last name is required'),
     mobilenumber: Yup.string().required("Mobile number is required").matches(phoneRegExp, 'Phone number is not valid'),
     // username: Yup.string()
     //   .required('Username is required')
