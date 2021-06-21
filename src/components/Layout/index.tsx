@@ -5,7 +5,7 @@ import Footer from './Footer';
 import Header from "./Header"
 const { Content } = Layout;
 const LayoutWithRoute = (props: any) => {
-  const { children } = props
+  const { children } = props;
   return (
     <>
     <Header/> 
