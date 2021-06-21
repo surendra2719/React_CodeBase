@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { phoneRegExp } from './../../config/regex';
+import { phoneRegExp } from '../config/regex';
 export interface SignUp {
     name: string;
     mobilenumber: string;
@@ -10,7 +10,7 @@ export interface SignUp {
     confirmPassword: string
 }
 export const signUp: { [P in keyof SignUp]: P } = {
-      name: "name",
+    name: "name",
     mobilenumber: "mobilenumber",
     email: "email",
     password: "password",

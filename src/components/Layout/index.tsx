@@ -2,10 +2,13 @@
 import { Layout } from 'antd';
 import SideMenu from './SideMenu';
 import Footer from './Footer';
+import Header from "./Header"
 const { Content } = Layout;
 const LayoutWithRoute = (props: any) => {
   const { children } = props
   return (
+    <>
+    <Header/> 
     <Layout style={{ minHeight: '100vh' }}>
       <SideMenu />
       <Layout>
@@ -13,6 +16,7 @@ const LayoutWithRoute = (props: any) => {
         <Footer />
       </Layout>
     </Layout>
+    </>
   );
 };
 

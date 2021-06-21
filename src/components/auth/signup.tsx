@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Card ,Alert} from "react-bootstrap"
 import { Link } from "react-router-dom"
-import { addDataToFB } from '../firebase/firebaseService';
-import { UseAuth } from "../contexts/AuthContext"
-import { useSignUpForm } from '../model/signup/signup';
-import Wrapper from "./Layout/wrapper";
+import { addDataToFB } from '../../firebase/firebaseService';
+import { UseAuth } from "../../contexts/AuthContext"
+import { useSignUpForm } from '../../model/signup.model';
+import Wrapper from "../Layout/wrapper";
 const SignUp = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useSignUpForm();
   const [errorMsg, setErrorMsg] = useState("")

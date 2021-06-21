@@ -1,6 +1,6 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
-import { UseAuth } from "../contexts/AuthContext"
+import { UseAuth } from "../../contexts/AuthContext"
 interface RouteProps {
   path?: string | string[];
   exact?: boolean;

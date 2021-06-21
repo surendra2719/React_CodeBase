@@ -11,4 +11,8 @@ p {
   max-width: 350px;
   margin: auto;
 }
+.page-not-found {
+  text-align: center;
+  padding: 112px 0px
+}
 @import '~antd/dist/antd.css';
